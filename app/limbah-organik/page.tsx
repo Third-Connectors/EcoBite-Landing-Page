@@ -135,7 +135,6 @@ export default function LimbahOrganik() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         {wasteTypes.map((w) => (
                             <div key={w.title} className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all duration-300">
-                                <div className="text-3xl mb-4">{w.icon}</div>
                                 <h3 style={{ fontFamily: "var(--font-display)" }} className="text-lg text-white mb-2">
                                     {w.title}
                                 </h3>
