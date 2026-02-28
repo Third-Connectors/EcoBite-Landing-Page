@@ -1,3 +1,6 @@
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+
 const features = [
     {
         icon: (
@@ -9,7 +12,7 @@ const features = [
         tag: "Restoran",
         title: "Posting dalam 60 Detik",
         desc: "Foto, harga, selesai. Interface yang dirancang untuk digunakan saat pikiran sibuk menjelang tutup. Tidak perlu training.",
-        accent: "orange",
+        accent: "orange" as const,
     },
     {
         icon: (
@@ -21,7 +24,7 @@ const features = [
         tag: "Pembeli",
         title: "Harga Hemat, Kualitas Terjaga",
         desc: "Makanan diskon 40–70% dari harga normal. Layak dimakan, bukan makanan reject. Tersedia di sekitar lokasi kamu.",
-        accent: "green",
+        accent: "green" as const,
     },
     {
         icon: (
@@ -33,7 +36,7 @@ const features = [
         tag: "Peternak & Petani",
         title: "Limbah Organik Berkualitas",
         desc: "Dapatkan sisa sayuran, kulit buah, ampas biji-bijian dari restoran terdekat. Murah, terpercaya, terjadwal sesuai kebutuhan.",
-        accent: "green",
+        accent: "green" as const,
     },
     {
         icon: (
@@ -44,7 +47,7 @@ const features = [
         tag: "Platform",
         title: "Sistem Penilaian Transparan",
         desc: "Rating dan review dua arah. Restoran dinilai konsistensi kualitasnya, pembeli dan peternak juga menjaga reputasi.",
-        accent: "orange",
+        accent: "orange" as const,
     },
     {
         icon: (
@@ -56,7 +59,7 @@ const features = [
         tag: "Restoran",
         title: "Analitik Dampak Nyata",
         desc: "Lihat berapa kg makanan diselamatkan, pendapatan tambahan, dan jejak karbon yang berkurang lewat dashboard restoranmu.",
-        accent: "green",
+        accent: "green" as const,
     },
     {
         icon: (
@@ -67,54 +70,9 @@ const features = [
         tag: "Platform",
         title: "Penjadwalan Fleksibel",
         desc: "Restoran bisa set waktu pickup, peternak bisa pilih slot pengambilan limbah. Tidak ada yang menunggu terlalu lama.",
-        accent: "orange",
+        accent: "orange" as const,
     },
 ];
-
-function FeatureCard({
-    feature,
-}: {
-    feature: (typeof features)[0];
-}) {
-    const isOrange = feature.accent === "orange";
-    return (
-        <div className="group relative bg-[var(--cream-dark)] hover:bg-white border border-[var(--ink)]/10 rounded-2xl p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-default overflow-hidden">
-            {/* Accent corner */}
-            <div
-                aria-hidden="true"
-                className={`absolute top-0 right-0 w-20 h-20 rounded-bl-[80px] transition-all duration-300 ${isOrange
-                        ? "bg-[var(--orange)]/8 group-hover:bg-[var(--orange)]/15"
-                        : "bg-[var(--green)]/8 group-hover:bg-[var(--green)]/15"
-                    }`}
-            />
-
-            <div
-                className={`mb-5 inline-flex p-3 rounded-xl ${isOrange
-                        ? "bg-[var(--orange)]/10 text-[var(--orange)]"
-                        : "bg-[var(--green)]/10 text-[var(--green)]"
-                    }`}
-            >
-                {feature.icon}
-            </div>
-
-            <div className="mb-3">
-                <span className={`text-xs font-semibold tracking-[0.12em] uppercase ${isOrange ? "text-[var(--orange)]" : "text-[var(--green)]"}`} style={{ fontFamily: "var(--font-body)" }}>
-                    {feature.tag}
-                </span>
-            </div>
-
-            <h3
-                style={{ fontFamily: "var(--font-display)" }}
-                className="text-xl text-[var(--ink)] mb-3 leading-tight"
-            >
-                {feature.title}
-            </h3>
-            <p style={{ fontFamily: "var(--font-body)" }} className="text-sm text-[var(--muted)] leading-relaxed">
-                {feature.desc}
-            </p>
-        </div>
-    );
-}
 
 export default function Features() {
     return (
@@ -133,9 +91,53 @@ export default function Features() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                    {features.map((f) => (
-                        <FeatureCard key={f.title} feature={f} />
-                    ))}
+                    {features.map((f) => {
+                        const isOrange = f.accent === "orange";
+                        return (
+                            <Card
+                                key={f.title}
+                                className="group bg-[var(--cream-dark)] hover:bg-white border border-[var(--ink)]/10 rounded-2xl transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-default overflow-hidden"
+                            >
+                                <CardContent className="p-7 relative">
+                                    {/* Accent corner */}
+                                    <div
+                                        aria-hidden="true"
+                                        className={`absolute top-0 right-0 w-20 h-20 rounded-bl-[80px] transition-all duration-300 ${isOrange
+                                                ? "bg-[var(--orange)]/8 group-hover:bg-[var(--orange)]/15"
+                                                : "bg-[var(--green)]/8 group-hover:bg-[var(--green)]/15"
+                                            }`}
+                                    />
+                                    <div
+                                        className={`mb-5 inline-flex p-3 rounded-xl ${isOrange
+                                                ? "bg-[var(--orange)]/10 text-[var(--orange)]"
+                                                : "bg-[var(--green)]/10 text-[var(--green)]"
+                                            }`}
+                                    >
+                                        {f.icon}
+                                    </div>
+                                    <div className="mb-3">
+                                        <Badge
+                                            className={`rounded-full px-3 py-0.5 text-[0.65rem] font-semibold tracking-[0.12em] uppercase ${isOrange
+                                                    ? "bg-[var(--orange)]/12 text-[var(--orange)] hover:bg-[var(--orange)]/20"
+                                                    : "bg-[var(--green)]/12 text-[var(--green)] hover:bg-[var(--green)]/20"
+                                                }`}
+                                        >
+                                            {f.tag}
+                                        </Badge>
+                                    </div>
+                                    <h3
+                                        style={{ fontFamily: "var(--font-display)" }}
+                                        className="text-xl text-[var(--ink)] mb-3 leading-tight"
+                                    >
+                                        {f.title}
+                                    </h3>
+                                    <p style={{ fontFamily: "var(--font-body)" }} className="text-sm text-[var(--muted)] leading-relaxed">
+                                        {f.desc}
+                                    </p>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
                 </div>
             </div>
         </section>

@@ -1,3 +1,9 @@
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
+
 const testimonials = [
     {
         quote:
@@ -5,7 +11,7 @@ const testimonials = [
         name: "Bapak Suharto",
         role: "Pemilik Warung Nasi Padang, Bandung",
         tag: "Restoran",
-        accent: "orange",
+        accent: "orange" as const,
     },
     {
         quote:
@@ -13,7 +19,7 @@ const testimonials = [
         name: "Ayu Rahmawati",
         role: "Mahasiswi, Jakarta",
         tag: "Pembeli",
-        accent: "green",
+        accent: "green" as const,
     },
     {
         quote:
@@ -21,7 +27,7 @@ const testimonials = [
         name: "Pak Dedi",
         role: "Peternak Ayam, Bogor",
         tag: "Peternak",
-        accent: "green",
+        accent: "green" as const,
     },
 ];
 
@@ -42,75 +48,86 @@ export default function Testimonials() {
                             Merasakannya.
                         </h2>
                     </div>
-                    <a
-                        href="#"
-                        style={{ fontFamily: "var(--font-body)" }}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--green)] hover:text-[var(--orange)] transition-colors duration-200"
+                    <Button
+                        variant="link"
+                        className="text-[var(--green)] hover:text-[var(--orange)] p-0 h-auto gap-2"
+                        asChild
                     >
-                        Lihat semua cerita
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                            <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                    </a>
+                        <a href="#">
+                            Lihat semua cerita
+                            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </a>
+                    </Button>
                 </div>
 
                 {/* Cards */}
                 <div className="grid md:grid-cols-3 gap-6">
-                    {testimonials.map((t) => (
-                        <div
-                            key={t.name}
-                            className="relative bg-white rounded-2xl p-8 border border-[var(--ink)]/8 hover:border-[var(--orange)]/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between"
-                        >
-                            {/* Big quotemark */}
-                            <div
-                                aria-hidden="true"
-                                style={{ fontFamily: "var(--font-display)" }}
-                                className={`absolute top-4 right-6 text-7xl leading-none select-none ${t.accent === "orange" ? "text-[var(--orange)]/12" : "text-[var(--green)]/12"
-                                    }`}
+                    {testimonials.map((t) => {
+                        const isOrange = t.accent === "orange";
+                        return (
+                            <Card
+                                key={t.name}
+                                className="relative bg-white rounded-2xl border border-[var(--ink)]/8 hover:border-[var(--orange)]/40 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
                             >
-                                &ldquo;
-                            </div>
-
-                            <div>
-                                <span
-                                    className={t.accent === "orange" ? "tag-orange" : "tag-green"}
-                                    style={{ fontFamily: "var(--font-body)" }}
-                                >
-                                    {t.tag}
-                                </span>
-                                <blockquote
-                                    style={{ fontFamily: "var(--font-body)" }}
-                                    className="mt-5 text-[var(--ink-soft)] leading-relaxed text-[0.95rem]"
-                                >
-                                    {t.quote}
-                                </blockquote>
-                            </div>
-
-                            <div className="mt-6 pt-5 border-t border-[var(--ink)]/8 flex items-center gap-3">
-                                {/* Avatar placeholder */}
-                                <div
-                                    className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center text-white text-sm font-semibold ${t.accent === "orange" ? "bg-[var(--orange)]" : "bg-[var(--green)]"
-                                        }`}
-                                    style={{ fontFamily: "var(--font-body)" }}
-                                >
-                                    {t.name.charAt(0)}
-                                </div>
-                                <div>
-                                    <div style={{ fontFamily: "var(--font-body)" }} className="font-semibold text-sm text-[var(--ink)]">
-                                        {t.name}
+                                <CardContent className="p-8 flex flex-col h-full">
+                                    {/* Big quotemark */}
+                                    <div
+                                        aria-hidden="true"
+                                        style={{ fontFamily: "var(--font-display)" }}
+                                        className={`absolute top-4 right-6 text-7xl leading-none select-none ${isOrange ? "text-[var(--orange)]/12" : "text-[var(--green)]/12"
+                                            }`}
+                                    >
+                                        &ldquo;
                                     </div>
-                                    <div style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--muted)]">
-                                        {t.role}
+
+                                    <div className="flex-1">
+                                        <Badge
+                                            className={`rounded-full px-3 py-0.5 text-[0.65rem] font-semibold tracking-[0.12em] uppercase ${isOrange
+                                                    ? "bg-[var(--orange)] text-white hover:bg-[var(--orange)]/90"
+                                                    : "bg-[var(--green)] text-white hover:bg-[var(--green-dark)]"
+                                                }`}
+                                        >
+                                            {t.tag}
+                                        </Badge>
+                                        <blockquote
+                                            style={{ fontFamily: "var(--font-body)" }}
+                                            className="mt-5 text-[var(--ink-soft)] leading-relaxed text-[0.95rem]"
+                                        >
+                                            {t.quote}
+                                        </blockquote>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
+
+                                    <Separator className="mt-6 bg-[var(--ink)]/8" />
+
+                                    <div className="mt-5 flex items-center gap-3">
+                                        <Avatar className="w-10 h-10 flex-shrink-0">
+                                            <AvatarFallback
+                                                className={`text-white text-sm font-semibold ${isOrange ? "bg-[var(--orange)]" : "bg-[var(--green)]"
+                                                    }`}
+                                            >
+                                                {t.name.charAt(0)}
+                                            </AvatarFallback>
+                                        </Avatar>
+                                        <div>
+                                            <div style={{ fontFamily: "var(--font-body)" }} className="font-semibold text-sm text-[var(--ink)]">
+                                                {t.name}
+                                            </div>
+                                            <div style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--muted)]">
+                                                {t.role}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </CardContent>
+                            </Card>
+                        );
+                    })}
                 </div>
 
                 {/* Impact numbers panel */}
                 <div className="mt-14 bg-[var(--ink)] rounded-2xl p-10 grid grid-cols-2 md:grid-cols-4 gap-8 relative overflow-hidden">
-                    <div aria-hidden="true" className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[var(--orange)]/5" />
+                    <div aria-hidden="true" className="absolute top-0 right-0 w-64 h-64 rounded-full bg-[var(--orange)]/5 pointer-events-none" />
                     {[
                         { val: "18 Ton", label: "Makanan diselamatkan bulan ini" },
                         { val: "95%", label: "Restoran puas dalam 3 bulan" },
@@ -118,10 +135,7 @@ export default function Testimonials() {
                         { val: "2.3rb+", label: "Download bulan ini" },
                     ].map((item) => (
                         <div key={item.label} className="relative z-10">
-                            <div
-                                style={{ fontFamily: "var(--font-display)" }}
-                                className="text-4xl text-[var(--orange)]"
-                            >
+                            <div style={{ fontFamily: "var(--font-display)" }} className="text-4xl text-[var(--orange)]">
                                 {item.val}
                             </div>
                             <div style={{ fontFamily: "var(--font-body)" }} className="mt-1 text-xs text-white/60 leading-snug">

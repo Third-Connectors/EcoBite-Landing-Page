@@ -1,13 +1,17 @@
-export default function Footer() {
-    const links = {
-        Platform: ["Cara Kerja", "Untuk Restoran", "Untuk Pembeli", "Limbah Organik", "Harga"],
-        Perusahaan: ["Tentang Kami", "Blog", "Press Kit", "Karir", "Kontak"],
-        Hukum: ["Syarat & Ketentuan", "Kebijakan Privasi", "Cookie Policy"],
-    };
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
+const links: Record<string, string[]> = {
+    Platform: ["Cara Kerja", "Untuk Restoran", "Untuk Pembeli", "Limbah Organik", "Harga"],
+    Perusahaan: ["Tentang Kami", "Blog", "Press Kit", "Karir", "Kontak"],
+    Hukum: ["Syarat & Ketentuan", "Kebijakan Privasi", "Cookie Policy"],
+};
+
+const socials = ["IG", "TW", "TK", "LI"];
+
+export default function Footer() {
     return (
         <footer className="bg-[var(--ink)] text-white">
-            {/* Main footer */}
             <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-10">
                     {/* Brand column */}
@@ -23,24 +27,22 @@ export default function Footer() {
                                 EcoBite
                             </span>
                         </div>
-                        <p
-                            style={{ fontFamily: "var(--font-body)" }}
-                            className="text-white/50 text-sm leading-relaxed max-w-xs"
-                        >
+                        <p style={{ fontFamily: "var(--font-body)" }} className="text-white/50 text-sm leading-relaxed max-w-xs">
                             Menyelamatkan makanan. Menghubungkan ekosistem. Satu pickup dalam satu waktu.
                         </p>
 
-                        {/* Social links */}
-                        <div className="mt-6 flex gap-4">
-                            {["IG", "TW", "TK", "LI"].map((s) => (
-                                <a
+                        {/* Social buttons */}
+                        <div className="mt-6 flex gap-3">
+                            {socials.map((s) => (
+                                <Button
                                     key={s}
-                                    href="#"
-                                    className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-xs font-semibold text-white/50 hover:border-[var(--orange)] hover:text-[var(--orange)] transition-all duration-200"
-                                    style={{ fontFamily: "var(--font-body)" }}
+                                    variant="outline"
+                                    size="icon-sm"
+                                    className="rounded-full border-white/20 bg-transparent text-white/50 hover:border-[var(--orange)] hover:text-[var(--orange)] hover:bg-transparent text-xs font-semibold"
+                                    asChild
                                 >
-                                    {s}
-                                </a>
+                                    <a href="#" aria-label={s}>{s}</a>
+                                </Button>
                             ))}
                         </div>
                     </div>
@@ -57,13 +59,13 @@ export default function Footer() {
                             <ul className="space-y-3">
                                 {items.map((item) => (
                                     <li key={item}>
-                                        <a
-                                            href="#"
-                                            style={{ fontFamily: "var(--font-body)" }}
-                                            className="text-sm text-white/60 hover:text-white transition-colors duration-200"
+                                        <Button
+                                            variant="link"
+                                            className="p-0 h-auto text-sm text-white/60 hover:text-white"
+                                            asChild
                                         >
-                                            {item}
-                                        </a>
+                                            <a href="#">{item}</a>
+                                        </Button>
                                     </li>
                                 ))}
                             </ul>
@@ -72,24 +74,20 @@ export default function Footer() {
                 </div>
             </div>
 
-            {/* Bottom bar */}
-            <div className="border-t border-white/10">
-                <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
-                    <p style={{ fontFamily: "var(--font-body)" }} className="text-xs text-white/30">
-                        © 2025 EcoBite. Hak cipta dilindungi.
-                    </p>
-                    <div className="flex items-center gap-2">
-                        <span
-                            style={{ fontFamily: "var(--font-body)" }}
-                            className="text-xs text-white/30"
-                        >
-                            Third Connector
-                        </span>
-                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--green)]" />
-                        <span style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--green)]">
-                            Carbon Neutral 2026
-                        </span>
-                    </div>
+            <Separator className="bg-white/10" />
+
+            <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-3">
+                <p style={{ fontFamily: "var(--font-body)" }} className="text-xs text-white/30">
+                    © 2026 EcoBite. Hak cipta dilindungi.
+                </p>
+                <div className="flex items-center gap-2">
+                    <span style={{ fontFamily: "var(--font-body)" }} className="text-xs text-white/30">
+                        Third Connector
+                    </span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--green)]" />
+                    <span style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--green)]">
+                        Carbon Neutral 2026
+                    </span>
                 </div>
             </div>
         </footer>
