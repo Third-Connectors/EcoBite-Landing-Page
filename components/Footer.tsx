@@ -1,10 +1,27 @@
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
-const links: Record<string, string[]> = {
-    Platform: ["Cara Kerja", "Untuk Restoran", "Untuk Pembeli", "Limbah Organik", "Harga"],
-    Perusahaan: ["Tentang Kami", "Blog", "Press Kit", "Karir", "Kontak"],
-    Hukum: ["Syarat & Ketentuan", "Kebijakan Privasi", "Cookie Policy"],
+const links: Record<string, { label: string; href: string }[]> = {
+    Platform: [
+        { label: "Cara Kerja", href: "/#cara-kerja" },
+        { label: "Untuk Restoran", href: "/untuk-restoran" },
+        { label: "Untuk Pembeli", href: "/untuk-pembeli" },
+        { label: "Limbah Organik", href: "/limbah-organik" },
+        { label: "Harga", href: "/harga" },
+    ],
+    Perusahaan: [
+        { label: "Tentang Kami", href: "#" },
+        { label: "Blog", href: "#" },
+        { label: "Press Kit", href: "#" },
+        { label: "Karir", href: "#" },
+        { label: "Kontak", href: "#" },
+    ],
+    Hukum: [
+        { label: "Syarat & Ketentuan", href: "#" },
+        { label: "Kebijakan Privasi", href: "#" },
+        { label: "Cookie Policy", href: "#" },
+    ],
 };
 
 const socials = ["IG", "TW", "TK", "LI"];
@@ -23,7 +40,9 @@ export default function Footer() {
                                     <circle cx="7" cy="6" r="1.8" fill="#2e6417" />
                                 </svg>
                             </div>
-                            <span style={{ fontFamily: "var(--font-display)" }} className="text-xl">EcoBite</span>
+                            <Link href="/" style={{ fontFamily: "var(--font-display)" }} className="text-xl hover:text-[var(--green-light)] transition-colors">
+                                EcoBite
+                            </Link>
                         </div>
                         <p style={{ fontFamily: "var(--font-body)" }} className="text-white/50 text-sm leading-relaxed max-w-xs">
                             Menyelamatkan makanan. Menghubungkan ekosistem. Satu pickup dalam satu waktu.
@@ -43,7 +62,7 @@ export default function Footer() {
                         </div>
                     </div>
 
-                    {/* Nav columns — each takes 1 col on mobile (2 per row), 1 col on desktop */}
+                    {/* Nav columns */}
                     {Object.entries(links).map(([category, items]) => (
                         <div key={category}>
                             <h4 style={{ fontFamily: "var(--font-body)" }} className="text-xs font-semibold tracking-[0.15em] uppercase text-white/40 mb-4">
@@ -51,9 +70,9 @@ export default function Footer() {
                             </h4>
                             <ul className="space-y-2.5">
                                 {items.map((item) => (
-                                    <li key={item}>
+                                    <li key={item.label}>
                                         <Button variant="link" className="p-0 h-auto text-sm text-white/60 hover:text-white" asChild>
-                                            <a href="#">{item}</a>
+                                            <Link href={item.href}>{item.label}</Link>
                                         </Button>
                                     </li>
                                 ))}

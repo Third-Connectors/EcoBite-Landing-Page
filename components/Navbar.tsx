@@ -1,9 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const navLinks = ["Cara Kerja", "Untuk Restoran", "Untuk Pembeli", "Limbah Organik"];
+const navLinks = [
+    { label: "Cara Kerja", href: "/#cara-kerja" },
+    { label: "Untuk Restoran", href: "/untuk-restoran" },
+    { label: "Untuk Pembeli", href: "/untuk-pembeli" },
+    { label: "Limbah Organik", href: "/limbah-organik" },
+];
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
@@ -16,7 +22,7 @@ export default function Navbar() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-10 h-14 md:h-16 flex items-center justify-between">
                     {/* Logo */}
-                    <a href="#" className="flex items-center gap-2 group">
+                    <Link href="/" className="flex items-center gap-2 group">
                         <div className="w-7 h-7 md:w-8 md:h-8 bg-[var(--green)] rounded-full flex items-center justify-center">
                             <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
                                 <path d="M8 2C5 2 3 4.5 3 7c0 3.5 5 9 5 9s5-5.5 5-9c0-2.5-2-5-5-5z" fill="white" />
@@ -29,18 +35,18 @@ export default function Navbar() {
                         >
                             EcoBite
                         </span>
-                    </a>
+                    </Link>
 
                     {/* Desktop nav links */}
                     <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-[var(--ink-soft)]">
                         {navLinks.map((item) => (
-                            <a
-                                key={item}
-                                href="#"
+                            <Link
+                                key={item.label}
+                                href={item.href}
                                 className="hover-underline hover:text-[var(--green)] transition-colors duration-200"
                             >
-                                {item}
-                            </a>
+                                {item.label}
+                            </Link>
                         ))}
                     </nav>
 
@@ -52,19 +58,19 @@ export default function Navbar() {
                             className="text-[var(--ink)] hover:text-[var(--green)] hover:bg-[var(--green)]/8"
                             asChild
                         >
-                            <a href="#">Masuk</a>
+                            <Link href="#">Masuk</Link>
                         </Button>
                         <Button
                             size="sm"
                             className="bg-[var(--green)] text-white rounded-full px-5 hover:bg-[var(--green-dark)] gap-2"
                             asChild
                         >
-                            <a href="#">
+                            <Link href="#">
                                 Mulai Sekarang
                                 <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
                                     <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                            </a>
+                            </Link>
                         </Button>
                     </div>
 
@@ -110,14 +116,14 @@ export default function Navbar() {
                 >
                     <nav className="flex flex-col px-5 py-4" style={{ fontFamily: "var(--font-body)" }}>
                         {navLinks.map((item) => (
-                            <a
-                                key={item}
-                                href="#"
+                            <Link
+                                key={item.label}
+                                href={item.href}
                                 onClick={() => setOpen(false)}
                                 className="py-3.5 text-base font-medium text-[var(--ink)] border-b border-[var(--ink)]/8 last:border-0 hover:text-[var(--green)] transition-colors duration-200"
                             >
-                                {item}
-                            </a>
+                                {item.label}
+                            </Link>
                         ))}
                         <div className="pt-4 pb-2 flex flex-col gap-3">
                             <Button
@@ -125,13 +131,13 @@ export default function Navbar() {
                                 className="w-full justify-center text-[var(--ink)] hover:text-[var(--green)] hover:bg-[var(--green)]/8"
                                 asChild
                             >
-                                <a href="#" onClick={() => setOpen(false)}>Masuk</a>
+                                <Link href="#" onClick={() => setOpen(false)}>Masuk</Link>
                             </Button>
                             <Button
                                 className="w-full bg-[var(--green)] text-white rounded-full hover:bg-[var(--green-dark)] justify-center"
                                 asChild
                             >
-                                <a href="#" onClick={() => setOpen(false)}>Mulai Sekarang</a>
+                                <Link href="#" onClick={() => setOpen(false)}>Mulai Sekarang</Link>
                             </Button>
                         </div>
                     </nav>
