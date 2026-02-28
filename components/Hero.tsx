@@ -5,23 +5,23 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Hero() {
     return (
-        <section className="relative min-h-screen bg-[var(--cream)] pt-16 overflow-hidden">
-            {/* Dot grid BG decoration */}
+        <section className="relative min-h-screen bg-[var(--cream)] pt-14 md:pt-16 overflow-hidden">
+            {/* Dot grid */}
             <div className="absolute inset-0 dot-grid opacity-[0.04]" aria-hidden="true" />
 
-            {/* Decorative circles */}
+            {/* Decorative circles — hidden on very small screens */}
             <div
                 aria-hidden="true"
-                className="absolute -top-24 -right-24 w-[580px] h-[580px] rounded-full border-[1.5px] border-[var(--ink)]/10 pointer-events-none"
+                className="hidden sm:block absolute -top-24 -right-24 w-[420px] md:w-[580px] h-[420px] md:h-[580px] rounded-full border-[1.5px] border-[var(--ink)]/10 pointer-events-none"
             />
             <div
                 aria-hidden="true"
-                className="absolute -top-10 -right-10 w-[440px] h-[440px] rounded-full border-[1.5px] border-[var(--orange)]/20 pointer-events-none"
+                className="hidden sm:block absolute -top-10 -right-10 w-[300px] md:w-[440px] h-[300px] md:h-[440px] rounded-full border-[1.5px] border-[var(--orange)]/20 pointer-events-none"
             />
 
-            {/* Spinning badge */}
+            {/* Spinning badge — desktop only */}
             <div
-                className="absolute top-28 right-16 md:right-24 hidden md:flex items-center justify-center w-28 h-28 animate-spin-slow pointer-events-none"
+                className="absolute top-24 right-10 md:top-28 md:right-24 hidden md:flex items-center justify-center w-24 h-24 md:w-28 md:h-28 animate-spin-slow pointer-events-none"
                 aria-hidden="true"
             >
                 <svg viewBox="0 0 120 120" className="absolute inset-0">
@@ -39,21 +39,19 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-10 pt-20 md:pt-28 pb-20">
+            <div className="max-w-7xl mx-auto px-5 md:px-10 pt-12 md:pt-24 pb-16 md:pb-20">
                 {/* Pre-headline */}
                 <div className="animate-fade-up">
-                    <Badge
-                        className="bg-[var(--orange)] text-white hover:bg-[var(--orange)]/90 rounded-full px-4 py-1 text-xs font-semibold tracking-[0.12em] uppercase"
-                    >
+                    <Badge className="bg-[var(--orange)] text-white hover:bg-[var(--orange)]/90 rounded-full px-3 md:px-4 py-1 text-[0.65rem] md:text-xs font-semibold tracking-[0.12em] uppercase">
                         Platform Food Rescue Pertama di Indonesia
                     </Badge>
                 </div>
 
                 {/* Headline */}
-                <div className="mt-8 max-w-4xl animate-fade-up delay-200">
+                <div className="mt-5 md:mt-8 max-w-4xl animate-fade-up delay-200">
                     <h1
                         style={{ fontFamily: "var(--font-display)" }}
-                        className="text-[clamp(3.2rem,8vw,7rem)] leading-[0.95] text-[var(--ink)] tracking-tight"
+                        className="text-[clamp(2.8rem,10vw,7rem)] leading-[0.95] text-[var(--ink)] tracking-tight"
                     >
                         Makanan Sisa
                         <br />
@@ -62,10 +60,10 @@ export default function Hero() {
                 </div>
 
                 {/* Body */}
-                <div className="mt-8 max-w-xl animate-fade-up delay-300">
+                <div className="mt-5 md:mt-8 max-w-xl animate-fade-up delay-300">
                     <p
                         style={{ fontFamily: "var(--font-body)" }}
-                        className="text-lg text-[var(--ink-soft)] leading-relaxed"
+                        className="text-base md:text-lg text-[var(--ink-soft)] leading-relaxed"
                     >
                         Restoran punya sisa makanan layak saat tutup? EcoBite menjualnya ke pembeli
                         dengan harga hemat — dan menyalurkan limbah organik ke peternak &amp; petani.
@@ -74,10 +72,10 @@ export default function Hero() {
                 </div>
 
                 {/* CTA row */}
-                <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up delay-400">
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3 md:gap-4 animate-fade-up delay-400">
                     <Button
                         size="lg"
-                        className="bg-[var(--ink)] text-white rounded-full px-7 hover:bg-[var(--green)] transition-all duration-300 gap-2"
+                        className="w-full sm:w-auto bg-[var(--ink)] text-white rounded-full px-7 hover:bg-[var(--green)] transition-all duration-300 gap-2"
                         asChild
                     >
                         <a href="#">
@@ -91,11 +89,11 @@ export default function Hero() {
                     <Button
                         variant="ghost"
                         size="lg"
-                        className="text-[var(--ink)] hover:text-[var(--green)] hover:bg-transparent gap-3 px-0"
+                        className="w-full sm:w-auto text-[var(--ink)] hover:text-[var(--green)] hover:bg-transparent gap-3 px-0 justify-start sm:justify-center"
                         asChild
                     >
                         <a href="#">
-                            <span className="w-10 h-10 rounded-full border-2 border-[var(--ink)]/20 flex items-center justify-center hover:border-[var(--green)] transition-colors duration-200">
+                            <span className="w-10 h-10 rounded-full border-2 border-[var(--ink)]/20 flex items-center justify-center">
                                 <svg width="12" height="14" viewBox="0 0 12 14" fill="none">
                                     <path d="M2 2l8 5-8 5V2z" fill="currentColor" />
                                 </svg>
@@ -106,7 +104,7 @@ export default function Hero() {
                 </div>
 
                 {/* Stats row */}
-                <div className="mt-16 pt-10 border-t border-[var(--ink)]/10 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-up delay-500">
+                <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[var(--ink)]/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 animate-fade-up delay-500">
                     {[
                         { value: "2.4T+", label: "Ton makanan terbuang/tahun di RI" },
                         { value: "500+", label: "Restoran bergabung" },
@@ -114,10 +112,10 @@ export default function Hero() {
                         { value: "0 Rp", label: "Biaya daftar untuk restoran" },
                     ].map((s) => (
                         <div key={s.label}>
-                            <div style={{ fontFamily: "var(--font-display)" }} className="text-4xl md:text-5xl text-[var(--green)]">
+                            <div style={{ fontFamily: "var(--font-display)" }} className="text-3xl md:text-5xl text-[var(--green)]">
                                 {s.value}
                             </div>
-                            <div className="mt-1 text-sm text-[var(--muted)] leading-snug" style={{ fontFamily: "var(--font-body)" }}>
+                            <div className="mt-1 text-xs md:text-sm text-[var(--muted)] leading-snug" style={{ fontFamily: "var(--font-body)" }}>
                                 {s.label}
                             </div>
                         </div>
@@ -127,7 +125,7 @@ export default function Hero() {
 
             {/* Wave separator */}
             <div
-                className="absolute bottom-0 left-0 right-0 h-24 bg-[var(--ink)] [clip-path:polygon(0_60%,100%_0,100%_100%,0_100%)]"
+                className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-[var(--ink)] [clip-path:polygon(0_60%,100%_0,100%_100%,0_100%)]"
                 aria-hidden="true"
             />
         </section>
