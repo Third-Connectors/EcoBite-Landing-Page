@@ -147,7 +147,7 @@ export default function UntukPembeli() {
                             <div key={s.num} className="relative p-7 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/8 transition-all duration-300">
                                 <div
                                     style={{ fontFamily: "var(--font-display)" }}
-                                    className="text-4xl text-[var(--green-light)]/30 mb-3"
+                                    className="text-4xl text-[var(--green-light)] mb-3"
                                 >
                                     {s.num}
                                 </div>
