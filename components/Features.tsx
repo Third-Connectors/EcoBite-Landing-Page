@@ -44,16 +44,24 @@ export default function Features() {
     return (
         <section className="bg-[var(--cream)] py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-5 md:px-10">
-                <div className="max-w-2xl mb-10 md:mb-14">
-                    <p className="section-label">Fitur Unggulan</p>
-                    <h2
-                        style={{ fontFamily: "var(--font-display)" }}
-                        className="mt-3 text-[clamp(2rem,5vw,3.6rem)] text-[var(--ink)] leading-[1.05]"
-                    >
-                        Satu Platform,
-                        <br />
-                        Tiga Keuntungan.
-                    </h2>
+                <div className="flex flex-row items-end justify-between gap-4 mb-10 md:mb-14">
+                    <div className="max-w-2xl">
+                        <p className="section-label">Fitur Unggulan</p>
+                        <h2
+                            style={{ fontFamily: "var(--font-display)" }}
+                            className="mt-3 text-[clamp(2rem,5vw,3.6rem)] text-[var(--ink)] leading-[1.05]"
+                        >
+                            Satu Platform,
+                            <br />
+                            Tiga Keuntungan.
+                        </h2>
+                    </div>
+                    <button className="hidden sm:flex items-center gap-2 text-sm font-semibold text-[var(--green)] hover:text-[var(--orange)] transition-colors duration-200 h-auto self-end mb-2">
+                        Lihat fitur teknis
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                    </button>
                 </div>
 
                 {/* 1 col → 2 col → 3 col */}

@@ -24,7 +24,7 @@ export default function Testimonials() {
         <section className="bg-[var(--cream-dark)] py-16 md:py-24">
             <div className="max-w-7xl mx-auto px-5 md:px-10">
                 {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 md:mb-14">
+                <div className="flex flex-row items-end justify-between gap-4 mb-10 md:mb-14">
                     <div>
                         <p className="section-label">Cerita Nyata</p>
                         <h2

@@ -66,7 +66,7 @@ export default function Hero() {
                         className="text-base md:text-lg text-[var(--ink-soft)] leading-relaxed"
                     >
                         Restoran punya sisa makanan layak saat tutup? EcoBite menjualnya ke pembeli
-                        dengan harga hemat — dan menyalurkan limbah organik ke peternak &amp; petani.
+                        dengan harga hemat dan menyalurkan limbah organik ke peternak &amp; petani.
                         Semua terhubung, tidak ada yang terbuang.
                     </p>
                 </div>
@@ -104,7 +104,7 @@ export default function Hero() {
                 </div>
 
                 {/* Stats row */}
-                <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[var(--ink)]/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 animate-fade-up delay-500">
+                <div className="mt-12 md:mt-16 pt-8 md:pt-10 border-t border-[var(--ink)]/10 flex flex-wrap justify-between gap-6 md:gap-8 animate-fade-up delay-500">
                     {[
                         { value: "2.4T+", label: "Ton makanan terbuang/tahun di RI" },
                         { value: "500+", label: "Restoran bergabung" },
