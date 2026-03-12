@@ -133,7 +133,7 @@ export default function UntukRestoran() {
                                 </div>
 
                                 {/* Decorative mini card */}
-                                <div className="absolute -top-6 -right-6 bg-white border border-[var(--ink)]/10 p-3 rounded-xl shadow-xl flex items-center gap-3">
+                                <div className="absolute -top-10 -right-6 bg-white border border-[var(--ink)]/10 p-3 rounded-xl shadow-xl flex items-center gap-3">
                                     <div className="w-8 h-8 rounded-full bg-[var(--orange)] flex items-center justify-center text-white">💰</div>
                                     <div>
                                         <div className="text-[10px] text-[var(--muted)] font-bold">New Order</div>

@@ -158,7 +158,7 @@ export default function UntukPembeli() {
                                 </Button>
                                 
                                 {/* Secondary Floating Element */}
-                                <div className="absolute -bottom-6 -left-6 bg-[var(--ink)] text-white p-3 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-subtle">
+                                <div className="absolute -bottom-8 -left-6 bg-[var(--ink)] text-white p-3 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-subtle">
                                     <div className="w-6 h-6 rounded-full bg-[var(--orange)] flex items-center justify-center text-[10px]">🔥</div>
                                     <div className="text-[10px] font-bold uppercase tracking-tight">Sisa 2 Porsi lagi!</div>
                                 </div>
