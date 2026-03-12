@@ -56,14 +56,6 @@ export default function Navbar() {
                     {/* Desktop CTA */}
                     <div className="hidden md:flex items-center gap-3">
                         <Button
-                            variant="ghost"
-                            size="sm"
-                            className="text-[var(--ink)] hover:text-[var(--green)] hover:bg-[var(--green)]/8"
-                            asChild
-                        >
-                            <Link href="#">Masuk</Link>
-                        </Button>
-                        <Button
                             size="sm"
                             className="bg-[var(--green)] text-white rounded-full px-5 hover:bg-[var(--green-dark)] gap-2"
                             asChild
