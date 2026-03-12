@@ -116,12 +116,13 @@ export default function UntukPembeli() {
                                         "bg-[var(--orange)]",
                                         "bg-[var(--green-light)]",
                                         "bg-[var(--orange)]/80",
+                                        "bg-[var(--green)]/80",
                                     ].map((bg, i) => (
                                         <div
                                             key={i}
                                             className={`w-8 h-8 md:w-9 md:h-9 rounded-full ${bg} border-2 border-[var(--cream)] flex items-center justify-center text-white text-[10px] font-bold`}
                                         >
-                                            {["R", "A", "D", "S"][i]}
+                                            {["L", "E", "S", "T", "A"][i]}
                                         </div>
                                     ))}
                                 </div>
