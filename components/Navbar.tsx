@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -23,11 +24,13 @@ export default function Navbar() {
                 <div className="max-w-7xl mx-auto px-5 md:px-10 h-14 md:h-16 flex items-center justify-between">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group">
-                        <div className="w-7 h-7 md:w-8 md:h-8 bg-[var(--green)] rounded-full flex items-center justify-center">
-                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                <path d="M8 2C5 2 3 4.5 3 7c0 3.5 5 9 5 9s5-5.5 5-9c0-2.5-2-5-5-5z" fill="white" />
-                                <circle cx="8" cy="7" r="2" fill="#2e6417" />
-                            </svg>
+                        <div className="relative w-8 h-8 md:w-9 md:h-9 overflow-hidden">
+                            <Image
+                                src="/logo.webp"
+                                alt="EcoBite Logo"
+                                fill
+                                className="object-contain"
+                            />
                         </div>
                         <span
                             style={{ fontFamily: "var(--font-display)" }}

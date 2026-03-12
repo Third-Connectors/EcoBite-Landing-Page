@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 
@@ -34,11 +35,13 @@ export default function Footer() {
                     {/* Brand column — full width on mobile */}
                     <div className="col-span-2 md:col-span-1">
                         <div className="flex items-center gap-2 mb-3 md:mb-4">
-                            <div className="w-7 h-7 bg-[var(--green)] rounded-full flex items-center justify-center">
-                                <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
-                                    <path d="M7 1C4.2 1 2 3.2 2 6c0 3.5 5 8 5 8s5-4.5 5-8c0-2.8-2.2-5-5-5z" fill="white" />
-                                    <circle cx="7" cy="6" r="1.8" fill="#2e6417" />
-                                </svg>
+                            <div className="relative w-8 h-8 md:w-9 md:h-9 overflow-hidden">
+                                <Image
+                                    src="/logo.webp"
+                                    alt="EcoBite Logo"
+                                    fill
+                                    className="object-contain"
+                                />
                             </div>
                             <Link href="/" style={{ fontFamily: "var(--font-display)" }} className="text-xl hover:text-[var(--green-light)] transition-colors">
                                 EcoBite

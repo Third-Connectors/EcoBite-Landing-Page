@@ -26,10 +26,10 @@ export default function Hero() {
             >
                 <svg viewBox="0 0 120 120" className="absolute inset-0">
                     <defs>
-                        <path id="circle-text" d="M 60,60 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" />
+                        <path id="circle-text" d="M 60,60 m -48,0 a 48,48 0 1,1 96,0 a 48,48 0 1,1 -96,0" />
                     </defs>
-                    <text fill="var(--green)" fontSize="10.5" fontFamily="var(--font-body)" fontWeight="600" letterSpacing="3">
-                        <textPath href="#circle-text">SELAMATKAN MAKANAN • KURANGI LIMBAH • </textPath>
+                    <text fill="var(--green)" fontSize="8.5" fontFamily="var(--font-body)" fontWeight="600" letterSpacing="2">
+                        <textPath href="#circle-text"> • SELAMATKAN MAKANAN •  •  • KURANGI LIMBAH • </textPath>
                     </text>
                 </svg>
                 <div className="w-8 h-8 rounded-full bg-[var(--orange)] flex items-center justify-center">
