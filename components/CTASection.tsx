@@ -7,7 +7,7 @@ export default function CTASection() {
             <div className="max-w-7xl mx-auto px-5 md:px-10">
                 <div className="relative bg-[var(--green)] rounded-2xl md:rounded-3xl px-6 sm:px-10 py-12 md:py-20 overflow-hidden">
                     {/* Decorative circles */}
-                    <div aria-hidden="true" className="absolute top-0 right-0 w-64 md:w-96 h-64 md:h-96 rounded-full border-[60px] md:border-[80px] border-[var(--green-dark)]/30 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+                    <div aria-hidden="true" className="absolute top-0 right-10 w-64 md:w-96 h-64 md:h-96 rounded-full border-[60px] md:border-[80px] border-[var(--green-dark)]/30 translate-x-1/3 -translate-y-1/3 pointer-events-none" />
                     <div aria-hidden="true" className="absolute bottom-0 left-0 w-40 md:w-64 h-40 md:h-64 rounded-full border-[40px] md:border-[60px] border-white/5 -translate-x-1/3 translate-y-1/3 pointer-events-none" />
 
                     {/* Stamp badge — repositioned on mobile to not overlap content */}

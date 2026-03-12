@@ -91,7 +91,7 @@ export default function Testimonials() {
                 </div>
 
                 {/* Impact panel — 2×2 on mobile, 4-col on desktop */}
-                <div className="mt-10 md:mt-14 bg-[var(--ink)] rounded-2xl p-7 md:p-10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 relative overflow-hidden">
+                <div className="mt-10 md:mt-14 bg-[var(--ink)] rounded-2xl p-7 md:p-10 flex flex-wrap justify-between items-center relative overflow-hidden gap-6">
                     <div aria-hidden="true" className="absolute top-0 right-0 w-48 md:w-64 h-48 md:h-64 rounded-full bg-[var(--orange)]/5 pointer-events-none" />
                     {[
                         { val: "18 Ton", label: "Makanan diselamatkan bulan ini" },
