@@ -68,58 +68,98 @@ export default function UntukRestoran() {
                 <div aria-hidden="true" className="absolute bottom-0 left-0 w-56 h-56 bg-[var(--green)]/5 rounded-full blur-3xl" />
 
                 <div className="relative max-w-7xl mx-auto px-5 md:px-10">
-                    <div className="max-w-2xl">
-                        <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--orange)]/12 text-[var(--orange)] hover:bg-[var(--orange)]/20 mb-5">
-                            Untuk Restoran
-                        </Badge>
-                        <h1
-                            style={{ fontFamily: "var(--font-display)" }}
-                            className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
-                        >
-                            Ubah Sisa Makanan
-                            <br />
-                            Jadi <span className="text-[var(--orange)]">Peluang Baru</span>.
-                        </h1>
-                        <p
-                            style={{ fontFamily: "var(--font-body)" }}
-                            className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
-                        >
-                            Setiap hari, makanan berkualitas terbuang sia-sia. Dengan EcoBite, jual menu sisa ke pembeli terdekat,
-                            tambah pendapatan, dan kurangi limbah — semuanya dari satu dashboard.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <Button
-                                size="lg"
-                                className="bg-[var(--orange)] text-white rounded-full px-7 hover:bg-[var(--orange)]/90 gap-2"
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
+                        <div className="max-w-2xl">
+                            <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--orange)]/12 text-[var(--orange)] hover:bg-[var(--orange)]/20 mb-5">
+                                Untuk Restoran
+                            </Badge>
+                            <h1
+                                style={{ fontFamily: "var(--font-display)" }}
+                                className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
                             >
-                                Daftarkan Restoran
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
-                                asChild
+                                Ubah Sisa Makanan
+                                <br />
+                                Jadi <span className="text-[var(--orange)]">Peluang Baru</span>.
+                            </h1>
+                            <p
+                                style={{ fontFamily: "var(--font-body)" }}
+                                className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
                             >
-                                <Link href="/#cara-kerja">Lihat Cara Kerja</Link>
-                            </Button>
+                                Setiap hari, makanan berkualitas terbuang sia-sia. Dengan EcoBite, jual menu sisa ke pembeli terdekat,
+                                tambah pendapatan, dan kurangi limbah semuanya dari satu dashboard.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button
+                                    size="lg"
+                                    className="bg-[var(--orange)] text-white rounded-full px-7 hover:bg-[var(--orange)]/90 gap-2"
+                                >
+                                    Daftarkan Restoran
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
+                                    asChild
+                                >
+                                    <Link href="/#cara-kerja">Lihat Cara Kerja</Link>
+                                </Button>
+                            </div>
+                        </div>
+
+                        {/* Floating Business Dashboard Card */}
+                        <div className="relative w-full max-w-md lg:max-w-none flex-1 flex justify-center lg:justify-end">
+                            <div className="relative z-10 bg-[var(--ink)] text-white rounded-2xl p-6 shadow-2xl -rotate-2 hover:rotate-0 transition-transform duration-500 w-full max-w-[340px]">
+                                <div className="flex justify-between items-center mb-6">
+                                    <div className="text-xs font-bold uppercase tracking-widest text-white/40">Revenue Today</div>
+                                    <Badge className="bg-[var(--green)]/20 text-[var(--green-light)] border-0">+12%</Badge>
+                                </div>
+                                <div className="text-3xl font-black mb-6">Rp 1.450.000</div>
+                                
+                                <div className="space-y-3">
+                                    <div className="flex justify-between items-center text-xs">
+                                        <span className="text-white/40">Items Sold</span>
+                                        <span className="font-bold">42 Porsi</span>
+                                    </div>
+                                    <div className="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                                        <div className="bg-[var(--orange)] h-full w-[70%]" />
+                                    </div>
+                                    <div className="flex justify-between items-center text-xs">
+                                        <span className="text-white/40">Waste Saved</span>
+                                        <span className="font-bold text-[var(--green-light)]">15.4 Kg</span>
+                                    </div>
+                                </div>
+
+                                {/* Decorative mini card */}
+                                <div className="absolute -top-6 -right-6 bg-white border border-[var(--ink)]/10 p-3 rounded-xl shadow-xl flex items-center gap-3">
+                                    <div className="w-8 h-8 rounded-full bg-[var(--orange)] flex items-center justify-center text-white">💰</div>
+                                    <div>
+                                        <div className="text-[10px] text-[var(--muted)] font-bold">New Order</div>
+                                        <div className="text-xs font-black text-[var(--ink)]">Rp 45.000</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Background mesh/pattern */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-[130%] bg-[radial-gradient(circle,var(--orange)_1px,transparent_1px)] [background-size:20px_20px] opacity-10 pointer-events-none" />
                         </div>
                     </div>
 
-                    {/* Stats */}
-                    <div className="mt-14 grid grid-cols-3 gap-4 max-w-lg">
+                    {/* Stats Row */}
+                    <div className="mt-16 md:mt-24 pt-8 border-t border-[var(--ink)]/5 flex flex-wrap justify-between gap-8 animate-fade-up">
                         {[
                             { val: "500+", label: "Restoran Terdaftar" },
                             { val: "12 Ton", label: "Makanan Diselamatkan" },
-                            { val: "40–70%", label: "Diskon untuk Pembeli" },
+                            { val: "Rp 2.4M+", label: "Tambahan Revenue" },
+                            { val: "15 Menit", label: "Waktu Onboarding" },
                         ].map((s) => (
-                            <div key={s.label} className="text-center">
+                            <div key={s.label}>
                                 <div style={{ fontFamily: "var(--font-display)" }} className="text-2xl md:text-3xl text-[var(--orange)]">
                                     {s.val}
                                 </div>
-                                <div style={{ fontFamily: "var(--font-body)" }} className="mt-1 text-xs text-[var(--muted)] leading-snug">
+                                <div style={{ fontFamily: "var(--font-body)" }} className="mt-1 text-xs text-[var(--muted)] uppercase tracking-widest">
                                     {s.label}
                                 </div>
                             </div>

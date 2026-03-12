@@ -18,7 +18,7 @@ const reasons = [
             </svg>
         ),
         title: "Harga Hemat 40–70%",
-        desc: "Makanan dari restoran terpercaya dengan diskon besar. Bukan makanan reject — kualitas tetap terjaga.",
+        desc: "Makanan dari restoran terpercaya dengan diskon besar. Bukan makanan reject kualitas tetap terjaga.",
     },
     {
         icon: (
@@ -68,66 +68,120 @@ export default function UntukPembeli() {
                 <div aria-hidden="true" className="absolute bottom-0 right-0 w-72 h-72 bg-[var(--orange)]/5 rounded-full blur-3xl" />
 
                 <div className="relative max-w-7xl mx-auto px-5 md:px-10">
-                    <div className="max-w-2xl">
-                        <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--green)]/12 text-[var(--green)] hover:bg-[var(--green)]/20 mb-5">
-                            Untuk Pembeli
-                        </Badge>
-                        <h1
-                            style={{ fontFamily: "var(--font-display)" }}
-                            className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
-                        >
-                            Makanan Enak,
-                            <br />
-                            <span className="text-[var(--green)]">Harga Bersahabat</span>.
-                        </h1>
-                        <p
-                            style={{ fontFamily: "var(--font-body)" }}
-                            className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
-                        >
-                            Nikmati makanan berkualitas dari restoran sekitar dengan diskon 40–70%.
-                            Bukan makanan sisa yang buruk — ini makanan layak dengan harga lebih baik.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <Button
-                                size="lg"
-                                className="bg-[var(--green)] text-white rounded-full px-7 hover:bg-[var(--green-dark)] gap-2"
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
+                        <div className="max-w-2xl">
+                            <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--green)]/12 text-[var(--green)] hover:bg-[var(--green)]/20 mb-5">
+                                Untuk Pembeli
+                            </Badge>
+                            <h1
+                                style={{ fontFamily: "var(--font-display)" }}
+                                className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
                             >
-                                Mulai Belanja
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
-                                asChild
+                                Makanan Enak,
+                                <br />
+                                <span className="text-[var(--green)]">Harga Bersahabat</span>.
+                            </h1>
+                            <p
+                                style={{ fontFamily: "var(--font-body)" }}
+                                className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
                             >
-                                <Link href="/#cara-kerja">Lihat Cara Kerja</Link>
-                            </Button>
+                                Nikmati makanan berkualitas dari restoran sekitar dengan diskon 40–70%.
+                                Bukan makanan sisa yang buruk ini makanan layak dengan harga lebih baik.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button
+                                    size="lg"
+                                    className="bg-[var(--green)] text-white rounded-full px-7 hover:bg-[var(--green-dark)] gap-2"
+                                >
+                                    Mulai Belanja
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
+                                    asChild
+                                >
+                                    <Link href="/#cara-kerja">Lihat Cara Kerja</Link>
+                                </Button>
+                            </div>
+
+                            {/* Social proof */}
+                            <div className="mt-10 flex flex-wrap gap-6 items-center">
+                                <div className="flex -space-x-2">
+                                    {[
+                                        "bg-[var(--green)]",
+                                        "bg-[var(--orange)]",
+                                        "bg-[var(--green-light)]",
+                                        "bg-[var(--orange)]/80",
+                                    ].map((bg, i) => (
+                                        <div
+                                            key={i}
+                                            className={`w-8 h-8 md:w-9 md:h-9 rounded-full ${bg} border-2 border-[var(--cream)] flex items-center justify-center text-white text-[10px] font-bold`}
+                                        >
+                                            {["R", "A", "D", "S"][i]}
+                                        </div>
+                                    ))}
+                                </div>
+                                <p style={{ fontFamily: "var(--font-body)" }} className="text-xs md:text-sm text-[var(--muted)]">
+                                    <strong className="text-[var(--ink)]">2,500+</strong> pembeli sudah bergabung
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Floating Card - Meal Listing Simulation */}
+                        <div className="relative w-full max-w-md lg:max-w-none flex-1 flex justify-center lg:justify-end">
+                            <div className="relative z-10 bg-white border border-[var(--ink)]/10 rounded-2xl p-5 shadow-2xl skew-y-1 hover:skew-y-0 transition-transform duration-500">
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="w-16 h-16 rounded-xl bg-[var(--cream-dark)] flex items-center justify-center text-[var(--orange)]">
+                                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                                            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z" />
+                                            <path d="M3 9V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4" />
+                                            <path d="M12 12v4" />
+                                            <path d="M9 14h6" />
+                                        </svg>
+                                    </div>
+                                    <Badge className="bg-[var(--orange)] text-white rounded-full">Diskon 60%</Badge>
+                                </div>
+                                <div className="space-y-1 mb-4">
+                                    <h3 className="font-bold text-[var(--ink)] text-lg">Nasi Goreng Spesial</h3>
+                                    <p className="text-xs text-[var(--muted)]">Restoran Bintang Jaya • 800m</p>
+                                </div>
+                                <div className="flex items-end gap-3 mb-4">
+                                    <div className="text-2xl font-black text-[var(--green)]">Rp 12.000</div>
+                                    <div className="text-sm text-[var(--muted)] line-through mb-1">Rp 30.000</div>
+                                </div>
+                                <Button className="w-full bg-[var(--green)] text-white hover:bg-[var(--green-dark)] rounded-xl py-5 h-auto font-bold">
+                                    Pesan Sekarang
+                                </Button>
+                                
+                                {/* Secondary Floating Element */}
+                                <div className="absolute -bottom-6 -left-6 bg-[var(--ink)] text-white p-3 rounded-xl shadow-xl flex items-center gap-3 animate-bounce-subtle">
+                                    <div className="w-6 h-6 rounded-full bg-[var(--orange)] flex items-center justify-center text-[10px]">🔥</div>
+                                    <div className="text-[10px] font-bold uppercase tracking-tight">Sisa 2 Porsi lagi!</div>
+                                </div>
+                            </div>
+                            
+                            {/* Decorative circles */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-[var(--orange)]/5 rounded-full pointer-events-none" />
                         </div>
                     </div>
 
-                    {/* Social proof */}
-                    <div className="mt-14 flex flex-wrap gap-6 items-center">
-                        <div className="flex -space-x-2">
-                            {[
-                                "bg-[var(--green)]",
-                                "bg-[var(--orange)]",
-                                "bg-[var(--green-light)]",
-                                "bg-[var(--orange)]/80",
-                            ].map((bg, i) => (
-                                <div
-                                    key={i}
-                                    className={`w-9 h-9 rounded-full ${bg} border-2 border-[var(--cream)] flex items-center justify-center text-white text-xs font-bold`}
-                                >
-                                    {["R", "A", "D", "S"][i]}
-                                </div>
-                            ))}
-                        </div>
-                        <p style={{ fontFamily: "var(--font-body)" }} className="text-sm text-[var(--muted)]">
-                            <strong className="text-[var(--ink)]">2,500+</strong> pembeli sudah bergabung
-                        </p>
+                    {/* Stats Row */}
+                    <div className="mt-16 md:mt-24 pt-8 border-t border-[var(--ink)]/5 flex flex-wrap justify-between gap-8 animate-fade-up">
+                        {[
+                            { val: "40-70%", label: "Potongan Harga" },
+                            { val: "1.2rb+", label: "Restoran Pilihan" },
+                            { val: "4.8/5", label: "Rating Pengguna" },
+                            { val: "24/7", label: "Update Menu" },
+                        ].map((s) => (
+                            <div key={s.label}>
+                                <div style={{ fontFamily: "var(--font-display)" }} className="text-2xl md:text-3xl text-[var(--green)]">{s.val}</div>
+                                <div style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--muted)] uppercase tracking-widest mt-1">{s.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>

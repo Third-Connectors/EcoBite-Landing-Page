@@ -238,7 +238,7 @@ export default function Harga() {
                         Masih Ragu?
                     </h2>
                     <p style={{ fontFamily: "var(--font-body)" }} className="text-white/70 text-base md:text-lg max-w-lg mx-auto mb-8">
-                        Mulai dengan plan Starter — gratis, tanpa komitmen. Upgrade kapan saja ketika bisnis berkembang.
+                        Mulai dengan plan Starter gratis, tanpa komitmen. Upgrade kapan saja ketika bisnis berkembang.
                     </p>
                     <Button
                         size="lg"

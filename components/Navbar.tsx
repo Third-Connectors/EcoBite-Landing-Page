@@ -122,13 +122,6 @@ export default function Navbar() {
                         ))}
                         <div className="pt-4 pb-2 flex flex-col gap-3">
                             <Button
-                                variant="ghost"
-                                className="w-full justify-center text-[var(--ink)] hover:text-[var(--green)] hover:bg-[var(--green)]/8"
-                                asChild
-                            >
-                                <Link href="#" onClick={() => setOpen(false)}>Masuk</Link>
-                            </Button>
-                            <Button
                                 className="w-full bg-[var(--green)] text-white rounded-full hover:bg-[var(--green-dark)] justify-center"
                                 asChild
                             >

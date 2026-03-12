@@ -36,7 +36,7 @@ export default function CTASection() {
                         </h2>
 
                         <p style={{ fontFamily: "var(--font-body)" }} className="mt-4 md:mt-5 text-white/70 text-base md:text-lg max-w-lg leading-relaxed">
-                            Apakah kamu restoran, pembeli yang ingin hemat, atau peternak yang butuh bahan organik — tempatmu ada di EcoBite.
+                            Apakah kamu restoran, pembeli yang ingin hemat, atau peternak yang butuh bahan organik tempatmu ada di EcoBite.
                         </p>
 
                         <div className="mt-8 md:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">

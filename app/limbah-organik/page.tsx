@@ -16,7 +16,7 @@ const wasteTypes = [
     },
     {
         title: "Ampas Biji-bijian",
-        desc: "Ampas kopi, sisa fermentasi, dan residu serealia — kaya nutrisi untuk kompos atau pakan campuran.",
+        desc: "Ampas kopi, sisa fermentasi, dan residu serealia kaya nutrisi untuk kompos atau pakan campuran.",
     },
     {
         title: "Sisa Protein & Tulang",
@@ -24,7 +24,7 @@ const wasteTypes = [
     },
     {
         title: "Roti & Bakery Sisa",
-        desc: "Roti kadaluarsa, sisa pastry, dan produk bakery — cocok untuk pakan ternak unggas dan babi.",
+        desc: "Roti kadaluarsa, sisa pastry, dan produk bakery cocok untuk pakan ternak unggas dan babi.",
     },
 ];
 
@@ -80,44 +80,94 @@ export default function LimbahOrganik() {
                 <div aria-hidden="true" className="absolute bottom-0 left-10 w-56 h-56 bg-[var(--orange)]/5 rounded-full blur-3xl" />
 
                 <div className="relative max-w-7xl mx-auto px-5 md:px-10">
-                    <div className="max-w-2xl">
-                        <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--green)]/12 text-[var(--green)] hover:bg-[var(--green)]/20 mb-5">
-                            Limbah Organik
-                        </Badge>
-                        <h1
-                            style={{ fontFamily: "var(--font-display)" }}
-                            className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
-                        >
-                            Limbah Restoran,
-                            <br />
-                            <span className="text-[var(--green)]">Nutrisi Peternakan</span>.
-                        </h1>
-                        <p
-                            style={{ fontFamily: "var(--font-body)" }}
-                            className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
-                        >
-                            EcoBite menghubungkan sisa organik restoran dengan peternak dan petani yang membutuhkan.
-                            Murah, terpercaya, dan berdampak bagi lingkungan.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <Button
-                                size="lg"
-                                className="bg-[var(--green)] text-white rounded-full px-7 hover:bg-[var(--green-dark)] gap-2"
+                    <div className="flex flex-col lg:flex-row items-center justify-between gap-12 md:gap-16">
+                        <div className="max-w-2xl">
+                            <Badge className="rounded-full px-3 py-1 text-[0.65rem] font-semibold tracking-[0.12em] uppercase bg-[var(--green)]/12 text-[var(--green)] hover:bg-[var(--green)]/20 mb-5">
+                                Limbah Organik
+                            </Badge>
+                            <h1
+                                style={{ fontFamily: "var(--font-display)" }}
+                                className="text-[clamp(2.2rem,5.5vw,4rem)] text-[var(--ink)] leading-[1.05] mb-5"
                             >
-                                Daftar Sebagai Peternak
-                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                                    <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </Button>
-                            <Button
-                                variant="outline"
-                                size="lg"
-                                className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
-                                asChild
+                                Limbah Restoran,
+                                <br />
+                                <span className="text-[var(--green)]">Nutrisi Peternakan</span>.
+                            </h1>
+                            <p
+                                style={{ fontFamily: "var(--font-body)" }}
+                                className="text-base md:text-lg text-[var(--muted)] leading-relaxed max-w-lg mb-8"
                             >
-                                <Link href="/untuk-restoran">Saya Restoran</Link>
-                            </Button>
+                                EcoBite menghubungkan sisa organik restoran dengan peternak dan petani yang membutuhkan.
+                                Murah, terpercaya, dan berdampak bagi lingkungan.
+                            </p>
+                            <div className="flex flex-wrap gap-3">
+                                <Button
+                                    size="lg"
+                                    className="bg-[var(--green)] text-white rounded-full px-7 hover:bg-[var(--green-dark)] gap-2"
+                                >
+                                    Daftar Sebagai Peternak
+                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                </Button>
+                                <Button
+                                    variant="outline"
+                                    size="lg"
+                                    className="rounded-full px-7 border-[var(--ink)]/15 text-[var(--ink)] hover:bg-[var(--ink)]/5"
+                                    asChild
+                                >
+                                    <Link href="/untuk-restoran">Saya Restoran</Link>
+                                </Button>
+                            </div>
                         </div>
+
+                        {/* Floating Illustration/Card Area */}
+                        <div className="relative w-full max-w-md lg:max-w-none flex-1 flex justify-center lg:justify-end">
+                            <div className="relative z-10 bg-white border border-[var(--ink)]/10 rounded-2xl p-6 shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+                                <div className="flex items-center gap-4 mb-4">
+                                    <div className="w-12 h-12 rounded-full bg-[var(--green)]/10 flex items-center justify-center text-[var(--green)]">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            <circle cx="12" cy="7" r="4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-[var(--ink)]">Pak Dedi</div>
+                                        <div className="text-xs text-[var(--muted)]">Peternak Ayam, Bogor</div>
+                                    </div>
+                                </div>
+                                <div className="p-4 bg-[var(--cream)] rounded-xl border border-[var(--ink)]/5 italic text-sm text-[var(--ink-soft)] mb-3">
+                                    "Kualitas limbah sayuran dari EcoBite sangat konsisten. Ayam saya lebih sehat dan biaya pakan turun drastis."
+                                </div>
+                                <div className="flex justify-between items-center text-[0.65rem] font-bold uppercase tracking-wider text-[var(--green)]">
+                                    <span>Verified Peternak</span>
+                                    <span>⭐ 4.9 Rating</span>
+                                </div>
+                                
+                                {/* Decorative elements */}
+                                <div className="absolute -top-6 -right-6 w-20 h-20 bg-[var(--orange)] rounded-2xl -z-10 -rotate-12 flex items-center justify-center text-white font-bold opacity-20">
+                                    SAVE
+                                </div>
+                            </div>
+                            
+                            {/* Background badge */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-[var(--green)]/10 rounded-full pointer-events-none" />
+                        </div>
+                    </div>
+
+                    {/* Stats Row */}
+                    <div className="mt-16 md:mt-24 pt-8 border-t border-[var(--ink)]/5 flex flex-wrap justify-between gap-8 animate-fade-up">
+                        {[
+                            { val: "15rb+", label: "Kg Limbah Terolah" },
+                            { val: "300+", label: "Peternak Bergabung" },
+                            { val: "85%", label: "Efisiensi Pakan" },
+                            { val: "12 Kota", label: "Area Jangkauan" },
+                        ].map((s) => (
+                            <div key={s.label}>
+                                <div style={{ fontFamily: "var(--font-display)" }} className="text-2xl md:text-3xl text-[var(--green)]">{s.val}</div>
+                                <div style={{ fontFamily: "var(--font-body)" }} className="text-xs text-[var(--muted)] uppercase tracking-widest mt-1">{s.label}</div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </section>
