@@ -56,6 +56,21 @@ export default function Navbar() {
                     {/* Desktop CTA */}
                     <div className="hidden md:flex items-center gap-3">
                         <Button
+                            variant="outline"
+                            size="sm"
+                            className="rounded-full px-5 text-[var(--ink)] border-[var(--ink)]/20 hover:bg-[var(--ink)]/5 gap-2"
+                            asChild
+                        >
+                            <a href="/ecobite.apk" download="EcoBite.apk">
+                                Download App
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                    <polyline points="7 10 12 15 17 10" />
+                                    <line x1="12" y1="15" x2="12" y2="3" />
+                                </svg>
+                            </a>
+                        </Button>
+                        <Button
                             size="sm"
                             className="bg-[var(--green)] text-white rounded-full px-5 hover:bg-[var(--green-dark)] gap-2"
                             asChild
@@ -121,6 +136,20 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <div className="pt-4 pb-2 flex flex-col gap-3">
+                            <Button
+                                variant="outline"
+                                className="w-full rounded-full justify-center gap-2 text-[var(--ink)] border-[var(--ink)]/20 hover:bg-[var(--ink)]/5"
+                                asChild
+                            >
+                                <a href="/ecobite.apk" download="EcoBite.apk" onClick={() => setOpen(false)}>
+                                    Download App
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                                        <polyline points="7 10 12 15 17 10" />
+                                        <line x1="12" y1="15" x2="12" y2="3" />
+                                    </svg>
+                                </a>
+                            </Button>
                             <Button
                                 className="w-full bg-[var(--green)] text-white rounded-full hover:bg-[var(--green-dark)] justify-center"
                                 asChild
